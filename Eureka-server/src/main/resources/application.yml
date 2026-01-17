@@ -1,0 +1,27 @@
+server:
+  port: 8761
+  shutdown: graceful
+
+spring:
+    application:
+        name: eureka-server
+    lifecycle:
+      timeout-per-shutdown-phase: 30s
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false # Don't register yourself
+    fetch-registry: false       # Don't try to fetch a registry from elsewhere
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
