@@ -6,15 +6,20 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "contacts")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Contact {
+public class Contact extends BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_contact_id")
+    @SequenceGenerator(
+    		name = "seq_contact_id",
+    		sequenceName = "seq_contact_id",
+    		initialValue = 1,
+    		allocationSize = 50
+    	)
     private Long id;
 
     private String name;
@@ -27,21 +32,5 @@ public class Contact {
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
-    @Column(name = "created_at", updatable = false)
-    private LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = this.createdAt;
-    }
-
-    @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = LocalDateTime.now();
-    }
 }
 
