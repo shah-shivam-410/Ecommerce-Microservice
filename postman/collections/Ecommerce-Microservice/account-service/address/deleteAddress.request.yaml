@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{root-url}}/addresse/52"
+method: DELETE
+body:
+  type: json
+  content: ""
+order: 3000

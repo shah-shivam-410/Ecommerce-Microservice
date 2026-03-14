@@ -1,0 +1,16 @@
+# Use this workspace to collaborate
+workspace:
+  id: a8541fc0-f706-45ea-85ad-cf022d50aca2
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+cloudResources:
+  collections:
+    ..\postman\collections\Ecommerce-Microservice: 52809947-a2776149-825e-49e9-af7d-9dd5fca06a3c
+  environments:
+    ..\postman\environments\Ecommerce-Microservice-Env.environment.yaml: 52809947-f1c261b9-4aa6-41a1-9016-a453c448016f
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{root-url}}/addresse"
+method: GET
+order: 1000

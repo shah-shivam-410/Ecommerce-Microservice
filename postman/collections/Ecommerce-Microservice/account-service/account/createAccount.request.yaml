@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{root-url}}/account"
+method: POST
+body:
+  type: json
+  content: |-
+    {
+      "accountName": "BBC Ltd",
+      "accountType": "BUSINESS",
+      "address": {
+        "street": "Eweqcweq Ure",
+        "city": "Eqeqw",
+        "state": "Okee",
+        "country": "UK",
+        "postalCode": "111444"
+      },
+      "contacts": [
+        {
+          "name": "QW qeweq",
+          "email": "sdsdqsd@abcd.abc",
+          "phone": "1231231"
+        }
+      ]
+    }
+order: 2000

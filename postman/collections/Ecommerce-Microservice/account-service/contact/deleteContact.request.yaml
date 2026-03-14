@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{root-url}}/contact/1"
+method: DELETE
+body:
+  type: json
+  content: ""
+order: 3000

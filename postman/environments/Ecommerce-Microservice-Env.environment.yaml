@@ -1,0 +1,6 @@
+name: Ecommerce-Microservice-Env
+values:
+  - key: root-url
+    value: ""
+    enabled: true
+color: null

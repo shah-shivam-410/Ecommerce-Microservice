@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{root-url}}/address/52"
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+        "street": "A-1, Def Society",
+        "city": "Naroda",
+        "state": "Ahmedabad",
+        "country": "India",
+        "postalCode": "202020"
+    }
+order: 4000

@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{root-url}}/contact/2"
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+        "name": "C J",
+        "email": "c.j@abcd.abc",
+        "phone": "1231231221",
+        "accountId": 1
+    }
+order: 4000
