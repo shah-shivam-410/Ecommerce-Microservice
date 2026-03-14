@@ -1,20 +1,43 @@
 package org.example.accountservice.entity;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.example.accountservice.constants.AccountType;
-
-import java.time.LocalDateTime;
 import java.util.List;
 
+import org.example.accountservice.constants.AccountType;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedAttributeNode;
+import jakarta.persistence.NamedEntityGraph;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@NamedEntityGraph(
+		name = "account.address.contacts",
+		attributeNodes = {
+				@NamedAttributeNode("address"),
+				@NamedAttributeNode("contacts")
+		}
+)
 public class Account extends BaseEntity {
 
     @Id
@@ -25,14 +48,15 @@ public class Account extends BaseEntity {
     		initialValue = 1,
     		allocationSize = 50
     	)
-    Long accountId;
+    Long id;
 
-    String accountName;
+    String name;
 
-    AccountType accountType;
+    AccountType type;
     
     @ManyToOne
     @JoinColumn(name = "address_id")
+    
     Address address;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)

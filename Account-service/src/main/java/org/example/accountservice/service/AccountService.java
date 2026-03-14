@@ -31,7 +31,6 @@ public class AccountService {
     @Transactional
     public AccountDto create(AccountDto dto) {
         Account account = AccountMapper.toEntity(dto);
-        // persist address first if present to ensure managed relationship
         Address addr = account.getAddress();
         if (addr != null) {
             Address saved = addressRepository.save(addr);
@@ -56,8 +55,8 @@ public class AccountService {
     @Transactional
     public Optional<AccountDto> update(Long id, AccountDto dto) {
         return accountRepository.findById(id).map(existing -> {
-            existing.setAccountName(dto.getAccountName());
-            existing.setAccountType(dto.getAccountType());
+            existing.setName(dto.getAccountName());
+            existing.setType(dto.getAccountType());
             // handle address
             AddressDto addressDto = dto.getAddress();
             if (addressDto != null) {

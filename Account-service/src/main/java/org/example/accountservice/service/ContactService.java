@@ -62,7 +62,7 @@ public class ContactService {
     }
 
     public List<ContactDto> findByAccountId(Long accountId) {
-        return contactRepository.findByAccountAccountId(accountId).stream().map(ContactMapper::toDto).collect(Collectors.toList());
+        return contactRepository.findByAccountId(accountId).stream().map(ContactMapper::toDto).collect(Collectors.toList());
     }
 }
 

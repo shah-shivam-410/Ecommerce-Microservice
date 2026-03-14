@@ -10,7 +10,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/addresses")
+@RequestMapping("/address")
 public class AddressController {
 
     private final AddressService addressService;

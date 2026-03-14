@@ -13,9 +13,9 @@ public class AccountMapper {
         if (dto == null) return null;
 
         Account.AccountBuilder builder = Account.builder()
-                .accountId(dto.getAccountId())
-                .accountName(dto.getAccountName())
-                .accountType(dto.getAccountType());
+                .id(dto.getAccountId())
+                .name(dto.getAccountName())
+                .type(dto.getAccountType());
         if (dto.getAddress() != null) {
             builder.address(AddressMapper.toEntity(dto.getAddress()));
         }
@@ -32,9 +32,9 @@ public class AccountMapper {
         if (entity == null) return null;
 
         AccountDto.AccountDtoBuilder builder = AccountDto.builder()
-                .accountId(entity.getAccountId())
-                .accountName(entity.getAccountName())
-                .accountType(entity.getAccountType());
+                .accountId(entity.getId())
+                .accountName(entity.getName())
+                .accountType(entity.getType());
         if(entity.getAddress() != null) {
             builder.address(AddressMapper.toDto(entity.getAddress()));
         }

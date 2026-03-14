@@ -10,7 +10,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/contacts")
+@RequestMapping("/contact")
 public class ContactController {
 
     private final ContactService contactService;

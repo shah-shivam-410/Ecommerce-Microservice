@@ -10,7 +10,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping("/account")
 public class AccountController {
 
     private final AccountService accountService;
@@ -18,7 +18,7 @@ public class AccountController {
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
     }
-
+ 
     @PostMapping
     public ResponseEntity<AccountDto> create(@Valid @RequestBody AccountDto dto) {
         AccountDto created = accountService.create(dto);

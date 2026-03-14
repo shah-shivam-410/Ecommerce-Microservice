@@ -18,7 +18,7 @@ public final class ContactMapper {
 
     public static ContactDto toDto(Contact entity) {
         if (entity == null) return null;
-        Long accountId = entity.getAccount() != null ? entity.getAccount().getAccountId() : null;
+        Long accountId = entity.getAccount() != null ? entity.getAccount().getId() : null;
         return ContactDto.builder()
                 .id(entity.getId())
                 .name(entity.getName())
