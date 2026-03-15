@@ -31,13 +31,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@NamedEntityGraph(
-		name = "account.address.contacts",
-		attributeNodes = {
-				@NamedAttributeNode("address"),
-				@NamedAttributeNode("contacts")
-		}
-)
 public class Account extends BaseEntity {
 
     @Id
@@ -52,11 +45,11 @@ public class Account extends BaseEntity {
 
     String name;
 
+    @Enumerated(EnumType.STRING)
     AccountType type;
     
     @ManyToOne
     @JoinColumn(name = "address_id")
-    
     Address address;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)

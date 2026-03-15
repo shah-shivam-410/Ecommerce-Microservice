@@ -1,4 +1,5 @@
 $kind: http-request
-url: "{{root-url}}/account/1"
+name: getAccountById
+url: "{{root-url}}/account/52"
 method: GET
 order: 3000

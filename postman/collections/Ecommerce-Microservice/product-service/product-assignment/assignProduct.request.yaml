@@ -1,0 +1,16 @@
+$kind: http-request
+name: assignProduct
+url: http://localhost:8082/product/assignments
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"accountId\": 1,\r
+
+    \    \"productId\": 5,\r
+
+    \    \"assignedByOrderId\": 2\r
+
+    }"
+order: 1773573799766

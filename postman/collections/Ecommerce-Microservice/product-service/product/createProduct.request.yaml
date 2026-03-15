@@ -1,0 +1,22 @@
+$kind: http-request
+name: createProduct
+url: http://localhost:8082/product
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"{{$randomProduct}}\",\r
+
+    \    \"sku\": \"Q1W3\",\r
+
+    \    \"price\": 4.33,\r
+
+    \    \"category\": \"{{$randomProductAdjective}}\",\r
+
+    \    \"stockQuantity\": 7,\r
+
+    \    \"status\": \"ACTIVE\"\r
+
+    }"
+order: 1000

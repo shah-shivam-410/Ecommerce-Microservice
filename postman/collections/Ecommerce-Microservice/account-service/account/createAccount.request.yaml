@@ -1,24 +1,25 @@
 $kind: http-request
+name: createAccount
 url: "{{root-url}}/account"
 method: POST
 body:
   type: json
   content: |-
     {
-      "accountName": "BBC Ltd",
-      "accountType": "BUSINESS",
+      "accountName": "QQW Ltd",
+      "accountType": "CONSUMER",
       "address": {
-        "street": "Eweqcweq Ure",
-        "city": "Eqeqw",
-        "state": "Okee",
-        "country": "UK",
-        "postalCode": "111444"
+        "street": "wqwqeqw Ure",
+        "city": "qweqw",
+        "state": "wqwqeqw",
+        "country": "qe",
+        "postalCode": "2131"
       },
       "contacts": [
         {
-          "name": "QW qeweq",
-          "email": "sdsdqsd@abcd.abc",
-          "phone": "1231231"
+          "name": "qweqw Rew",
+          "email": "qweq@abcd.abc",
+          "phone": "213131231"
         }
       ]
     }

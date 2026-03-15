@@ -35,11 +35,6 @@ public class AccountController {
         return ResponseEntity.ok(accountService.list());
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<AccountDto> update(@PathVariable Long id, @Valid @RequestBody AccountDto dto) {
-        return accountService.update(id, dto).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         boolean deleted = accountService.delete(id);

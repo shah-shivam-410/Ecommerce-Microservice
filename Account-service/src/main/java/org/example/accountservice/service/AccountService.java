@@ -1,21 +1,17 @@
 package org.example.accountservice.service;
 
-import org.example.accountservice.dto.AccountDto;
-import org.example.accountservice.dto.AddressDto;
-import org.example.accountservice.entity.Account;
-import org.example.accountservice.entity.Address;
-import org.example.accountservice.entity.Contact;
-import org.example.accountservice.repository.AccountRepository;
-import org.example.accountservice.repository.AddressRepository;
-import org.example.accountservice.mapper.AccountMapper;
-import org.example.accountservice.mapper.AddressMapper;
-import org.example.accountservice.mapper.ContactMapper;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.example.accountservice.dto.AccountDto;
+import org.example.accountservice.entity.Account;
+import org.example.accountservice.entity.Address;
+import org.example.accountservice.mapper.AccountMapper;
+import org.example.accountservice.repository.AccountRepository;
+import org.example.accountservice.repository.AddressRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AccountService {
@@ -50,40 +46,6 @@ public class AccountService {
 
     public List<AccountDto> list() {
         return accountRepository.findAll().stream().map(AccountMapper::toDto).collect(Collectors.toList());
-    }
-
-    @Transactional
-    public Optional<AccountDto> update(Long id, AccountDto dto) {
-        return accountRepository.findById(id).map(existing -> {
-            existing.setName(dto.getAccountName());
-            existing.setType(dto.getAccountType());
-            // handle address
-            AddressDto addressDto = dto.getAddress();
-            if (addressDto != null) {
-                Address addressEntity = AddressMapper.toEntity(addressDto);
-                Address savedAddress = addressRepository.save(addressEntity);
-                existing.setAddress(savedAddress);
-            } else {
-                existing.setAddress(null);
-            }
-            // handle contacts: replace existing contacts with new ones
-            if (dto.getContacts() != null) {
-                List<Contact> newContacts = dto.getContacts().stream().map(ContactMapper::toEntity).collect(Collectors.toList());
-                newContacts.forEach(c -> c.setAccount(existing));
-                if (existing.getContacts() == null) {
-                    existing.setContacts(newContacts);
-                } else {
-                    existing.getContacts().clear();
-                    existing.getContacts().addAll(newContacts);
-                }
-            } else {
-                if (existing.getContacts() != null) {
-                    existing.getContacts().clear();
-                }
-            }
-            Account saved = accountRepository.save(existing);
-            return AccountMapper.toDto(saved);
-        });
     }
 
     public boolean delete(Long id) {
