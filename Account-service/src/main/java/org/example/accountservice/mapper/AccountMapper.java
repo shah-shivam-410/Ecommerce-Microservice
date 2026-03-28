@@ -1,9 +1,9 @@
 package org.example.accountservice.mapper;
 
+import java.util.stream.Collectors;
+
 import org.example.accountservice.dto.AccountDto;
 import org.example.accountservice.entity.Account;
-
-import java.util.stream.Collectors;
 
 public class AccountMapper {
 

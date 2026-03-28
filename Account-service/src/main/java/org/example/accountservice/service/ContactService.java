@@ -1,16 +1,16 @@
 package org.example.accountservice.service;
 
-import org.example.accountservice.dto.ContactDto;
-import org.example.accountservice.entity.Contact;
-import org.example.accountservice.entity.Account;
-import org.example.accountservice.mapper.ContactMapper;
-import org.example.accountservice.repository.ContactRepository;
-import org.example.accountservice.repository.AccountRepository;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.example.accountservice.dto.ContactDto;
+import org.example.accountservice.entity.Account;
+import org.example.accountservice.entity.Contact;
+import org.example.accountservice.mapper.ContactMapper;
+import org.example.accountservice.repository.AccountRepository;
+import org.example.accountservice.repository.ContactRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 public class ContactService {

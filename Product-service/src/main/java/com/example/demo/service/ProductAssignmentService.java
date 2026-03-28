@@ -1,18 +1,19 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.ProductAssignmentDto;
-import com.example.demo.entity.ProductAssignment;
-import com.example.demo.entity.Product;
-import com.example.demo.mapper.ProductAssignmentMapper;
-import com.example.demo.repo.ProductAssignmentRepository;
-import com.example.demo.repo.ProductRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.dto.ProductAssignmentDto;
+import com.example.demo.entity.Product;
+import com.example.demo.entity.ProductAssignment;
+import com.example.demo.mapper.ProductAssignmentMapper;
+import com.example.demo.repo.ProductAssignmentRepository;
+import com.example.demo.repo.ProductRepository;
 
 @Service
 public class ProductAssignmentService {

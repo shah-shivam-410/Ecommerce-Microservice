@@ -1,0 +1,5 @@
+$kind: http-request
+name: getAllProductAssignment
+url: http://localhost:8082/product/assignments
+method: GET
+order: 3830463220858886

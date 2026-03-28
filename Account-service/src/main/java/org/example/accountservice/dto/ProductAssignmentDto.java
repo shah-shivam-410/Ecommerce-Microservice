@@ -1,5 +1,7 @@
 package org.example.accountservice.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,12 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AddressDto {
+public class ProductAssignmentDto {
     private Long id;
-    private String street;
-    private String city;
-    private String state;
-    private String country;
-    private String postalCode;
+    private Long accountId;
+    private Long productId;
+    private Long assignedByOrderId;
+    private LocalDateTime assignedAt;
 }
-

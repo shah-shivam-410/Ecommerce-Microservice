@@ -1,11 +1,10 @@
 package com.example.demo.mapper;
 
+import java.util.stream.Collectors;
+
 import com.example.demo.dto.ProductDto;
-import com.example.demo.dto.ProductAssignmentDto;
 import com.example.demo.entity.Product;
 import com.example.demo.entity.ProductAssignment;
-
-import java.util.stream.Collectors;
 
 public class ProductMapper {
 

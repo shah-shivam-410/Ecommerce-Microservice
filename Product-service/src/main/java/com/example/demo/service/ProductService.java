@@ -1,17 +1,18 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.ProductDto;
-import com.example.demo.entity.ProductAssignment;
-import com.example.demo.entity.Product;
-import com.example.demo.mapper.ProductMapper;
-import com.example.demo.repo.ProductAssignmentRepository;
-import com.example.demo.repo.ProductRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.demo.dto.ProductDto;
+import com.example.demo.entity.Product;
+import com.example.demo.entity.ProductAssignment;
+import com.example.demo.mapper.ProductMapper;
+import com.example.demo.repo.ProductAssignmentRepository;
+import com.example.demo.repo.ProductRepository;
 
 @Service
 public class ProductService {

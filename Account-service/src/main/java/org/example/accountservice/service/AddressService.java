@@ -1,14 +1,14 @@
 package org.example.accountservice.service;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.example.accountservice.dto.AddressDto;
 import org.example.accountservice.entity.Address;
 import org.example.accountservice.mapper.AddressMapper;
 import org.example.accountservice.repository.AddressRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class AddressService {
